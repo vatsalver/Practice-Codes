@@ -6,7 +6,7 @@ public class Arrays {
       int size = sc.nextInt();
       String names[] = new String[size];
  
-      //input
+      
       for(int i=0; i<size; i++) {
           names[i] = sc.next();
       }
