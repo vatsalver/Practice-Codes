@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+let name = "Vatsal"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React With Vatsal
-        </a>
-      </header>
-    </div>
+   <>
+   <nav>
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+   </nav>
+   <div className="container" >
+    <h3>Hello {name}</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur voluptatem, esse, in et placeat voluptate, iste animi voluptas cumque porro asperiores doloremque harum mollitia recusandae eligendi nesciunt! Esse, ratione id?</p>
+   </div>
+   </>
   );
 }
 
