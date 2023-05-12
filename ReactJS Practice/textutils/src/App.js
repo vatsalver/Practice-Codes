@@ -5,6 +5,9 @@ import TextForm from './components/TextForm';
 import React,{ useState } from 'react';
 import About from './components/About'
 import Alert from './components/Alert';
+import {BrowserRouter as Main,Route,Routes} from 'react-router-dom';
+import ErrorPage from './components/Errorpage';
+
 
 
 function App() {
@@ -34,13 +37,27 @@ function App() {
   }
   return (
     <>
-    
+    <Main>
     <Navbar title="Textutils" mode={mode} about="About" togglemode={togglemode}/>
     <Alert alert={alert} />
     <div className="container my-3">
-    <TextForm showAlert={showAlert} mode={mode} heading="Enter the text here to annalyze"  /> 
-    <About />
+    <Routes>
+      <Route exact path='/'
+      element={
+       <TextForm showAlert={showAlert} mode={mode} heading="Enter the text here to annalyze"  /> 
+      }
+      />
+      <Route exact path='/About'
+      element={
+      <About mode={mode}/>
+      } />
+      <Route path='*'
+      errorelement={
+      <ErrorPage/>
+      } />
+    </Routes>
     </div>
+    </Main>
     </>
   );
 }
