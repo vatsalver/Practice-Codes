@@ -13,6 +13,14 @@ code {
     monospace;
 }
 
-#carousel{
-  max-height: 500px;
+#carousel {
+  height: 300px; /* Set the desired height for the carousel container */
+  display: flex; /* Use flexbox to center the image vertically */
+  align-items: center; /* Center the image vertically */
+}
+
+.carousel-inner img {
+  max-height: 100%; /* Set a maximum height for the image */
+  max-width: 100%; /* Set a maximum width for the image */
+  margin: 0 auto; /* Center the image horizontally */
 }
