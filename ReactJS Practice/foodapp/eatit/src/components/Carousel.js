@@ -25,19 +25,19 @@ export default function Carousel() {
               </button>
             </form>
           </div>
-          <div className="carousel-item active">
+          <div className="carousel-item active" >
             <img
               src="https://source.unsplash.com/random/900x700/?burger"
               className="d-block w-100"
-              style={{ filter: "brightness(50%)", objectFit: "cover" }}
-              alt="..."
+              style={{ filter: "brightness(50%)", objectFit: "fill" }}
+              alt="..." 
             />
           </div>
           <div className="carousel-item">
             <img
               src="https://source.unsplash.com/random/900x700/?fries"
               className="d-block w-100"
-              style={{ filter: "brightness(50%)", objectFit: "cover" }}
+              style={{ filter: "brightness(50%)", objectFit: "fill" }}
               alt="..."
             />
           </div>
@@ -45,7 +45,7 @@ export default function Carousel() {
             <img
               src="https://source.unsplash.com/random/900x700/?pizza"
               className="d-block w-100"
-              style={{ filter: "brightness(50%)", objectFit: "cover" }}
+              style={{ filter: "brightness(50%)", objectFit: "fill" }}
               alt="..."
             />
           </div>
