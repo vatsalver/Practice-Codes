@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
+import { Badge } from 'react-bootstrap';
+import Modal from '../Modal';
+import Cart from '../screens/Cart';
+import { useCart } from './contextreducer';
 export default function Navbar() {
-const Navigate = useNavigate();
+ let data = useCart();  
+ const [cartview,setCartView] = useState(false)
+ const Navigate = useNavigate();
  const handlelogout = ()=>{
   localStorage.removeItem("authToken");
   Navigate("/login")
@@ -34,10 +40,15 @@ const Navigate = useNavigate();
                 <Link className="btn bg-white text-warning mx-1" to="/createuser">SignUp</Link>
               </div>
               : <div>
-                <div className='btn bg-white text-success mx-2'>
-                  My Cart
+                <div className='btn bg-white text-success mx-2' onClick={()=>{setCartView(true)}}>
+                <div className='d-flex'>
+                  My Cart 
+                  <div className='mx-2 '>
+                  { <Badge pill bg="success ">{data.length}</Badge>}
+                  </div>
+                  </div>
                   </div >
-
+                  {cartview? <Modal onClose={()=>setCartView(false)}><Cart></Cart></Modal>:null}
                   <div className='btn bg-white text-danger mx-2' onClick={handlelogout}>
                     Logout
                     </div >
