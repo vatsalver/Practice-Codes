@@ -29,6 +29,7 @@ router.post('/orderData', async (req, res) => {
 
     else {
         try {
+            console.log(data)
             await Order.findOneAndUpdate({email:req.body.email},
                 { $push:{order_data: data} }).then(() => {
                     res.json({ success: true })
@@ -39,5 +40,12 @@ router.post('/orderData', async (req, res) => {
         }
     }
 })
-
+router.post('/myorderData', async (req, res) => {
+    try {
+        let myData = await Order.findOne({'email':req.body.email})
+        res.json({orderData : myData})
+    } catch (error) {
+          res.send("Server Error",error.message)
+    }
+})
 module.exports = router; 

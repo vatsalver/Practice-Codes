@@ -1,6 +1,10 @@
 import React,{useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 export default function Login() {
+  
   const [credentials,setcredentials] = useState({email:"",password:""})
   let navigate=useNavigate();
   const handleSubmit=async(e) =>{
@@ -30,6 +34,7 @@ export default function Login() {
    }   
   return (
     <>
+    <Navbar></Navbar>
      <div className='container'>
       <form onSubmit={handleSubmit}>
       
@@ -47,6 +52,7 @@ export default function Login() {
         <Link to ="/forgotP" className='m-3 btn btn-danger'>Forgot Password ?</Link>
       </form>
       </div> 
+    <Footer></Footer>
     </>
   );
 }

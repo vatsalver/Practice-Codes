@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function SignUP() {
   const [credentials,setcredentials] = useState({name:"",email:"",password:"",location:""})
@@ -25,6 +27,7 @@ export default function SignUP() {
    }   
   return (
     <>
+    <Navbar />
     <div className='container'>
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
@@ -49,6 +52,7 @@ export default function SignUP() {
         <Link to ="/login" className='m-3 btn btn-danger'>Already a user ?</Link>
       </form>
       </div>
+      <Footer/>
     </>
   );
 }
